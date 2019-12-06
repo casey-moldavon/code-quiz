@@ -6,55 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Code Quiz</title>
 
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 <body>
-    <div class="container">
-        <div id="question-container" class="hide"></div>
-            <div id="question">Question</div>
-            <div id="answer-button" class="button-list">
-                <button class="button">Answer 1</button>
-                <button class="button">Answer 2</button>
-                <button class="button">Answer 3</button>
-                <button class="button">Answer 4</button>
+        <form>
+            <div class="quiz_wrapper">
+                <div class="question">Question goes here</div>
+
+                    <div id="options-list" class="options-list">
+                        <button id="op1">Option 1</button>
+                        <button id="op2">Option 2</button>
+                        <button id="op3">Option 3</button>
+                        <button id="op4">Option 4</button>
+                    </div>
+
+                </div>
+                <button type="button" id="start-button">Start</button>
             </div>
-        <div class="controls">
-            <button id="start-button" class="start-button button">Start</button>
-            <button id="next-button" class="next-button button">Next</button>
-
-        </div>
+        </form>
     </div>
+    
+    <div class="timer">Time: 0 seconds left</div>
 
-
-
-
-    <!-- <div class="quiz">
-        <div class="question">
-            Question goes here...
-        </div>
-
-        <div class="options">
-            <ul>
-                <li id="a">A</li>
-                <li id="b">B</li>
-                <li id="c">C</li>
-                <li id="d">D</li>
-            </ul>
-        </div>
-
-        <div class="score">
-            <div class = "next">
-                <button type="button">Next</button>
-            </div>
-        </div>
-        <div class="score-display">
-            score: <span>12</span>
-        </div>
-    </div>
-
-    <button type="button" id="button"><strong>Start Game!</strong></button> -->
 
 <script src="script.js"></script>
 </body>
