@@ -1,6 +1,5 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded;
 }
 
 :root {
@@ -30,7 +29,7 @@ body.correct {
 
 .container {
     width: 600px;
-    height: 500px;
+    height: 525px;
     max-width: 60%;
     background-color: white;
     border-radius: 10px;
@@ -39,11 +38,16 @@ body.correct {
 }
 
 .question-display {
-    width: 70%;
-    margin: 25px;
     background-color: red;
     border-radius: 10px;
-    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-style: bold;
+    color: white;
 }
 
 .options-list {
@@ -60,6 +64,7 @@ body.correct {
     border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-top: 5px;
     font-size: 18px;
     font-style: bold;
     color: white;
@@ -83,9 +88,24 @@ body.correct {
     background-color: hsl(var(--hue), 100%, 50%);
     font-size: 18px;
     font-weight: bold;
-    padding: 10px;
-    margin: 20px;
-    width: 25%;
+    padding: 15px;
+    margin: 25px;
+    width: 35%;
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: bold;
+    color: white;
+    float: left;
+}
+
+.timer {
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    margin: 25px;
+    width: 35%;
     border-radius: 5px;
     font-size: 18px;
     font-style: bold;
