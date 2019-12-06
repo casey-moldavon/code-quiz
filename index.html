@@ -12,13 +12,13 @@
 <body>
         <div class="container">
             <div id="question-container">
-                <div class="question-display" id="question-display">Question goes here</div>
+                <div class="question-display" id="question-display">Press "Start Quiz" to begin!</div>
 
                 <div id="options-list" class="options-list">
-                    <button class=btn id="op1">Option 1</button>
-                    <button class=btn id="op2">Option 2</button>
-                    <button class=btn id="op3">Option 3</button>
-                    <button class=btn id="op4">Option 4</button>
+                    <button onclick="clickOption1()" class=btn id="op1">Option 1</button> <!-- use value? or .text -->
+                    <button onclick="clickOption2()" class=btn id="op2">Option 2</button>
+                    <button onclick="clickOption3()" class=btn id="op3">Option 3</button>
+                    <button onclick="clickOption4()" class=btn id="op4">Option 4</button>
 
                     <div class="quizControl">
                             <div class="timer">Time: 0 seconds left</div>
@@ -27,6 +27,7 @@
                     </div>
                 </div>
             </div>
+            <button type="button" id="high-scores">High Scores</button>
         </div>
     </div>
 

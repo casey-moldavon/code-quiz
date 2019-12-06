@@ -90,22 +90,40 @@ body.correct {
     font-weight: bold;
     padding: 15px;
     margin: 25px;
-    width: 35%;
+    width: 40%;
     border-radius: 5px;
     font-size: 18px;
     font-style: bold;
     color: white;
     float: left;
 }
-
-.timer {
+#high-scores {
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
     font-size: 18px;
     font-weight: bold;
+    margin-left: 30%;
+    margin-top: 27%;
+    padding: 15px;
+    width: 40%;
+    border-radius: 5px;
+    font-size: 18px;
+    font-style: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.timer {
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: green;
+    font-size: 18px;
+    font-weight: bold;
     padding: 15px;
     margin: 25px;
-    width: 35%;
+    width: 40%;
     border-radius: 5px;
     font-size: 18px;
     font-style: bold;
@@ -123,12 +141,6 @@ body.correct {
     justify-content: center;
     align-items: center;
 }
-
-
-
-
-
-
 
 
 
