@@ -12,6 +12,7 @@ option4.style.visibility = "hidden"
 var startButton = document.getElementById("start-button");
 var highScoreButton = document.getElementById("high-scores");
 var timeEl = document.querySelector(".timer");
+var optionsList = document.querySelector(".options-list");
 
 
 var score = 0
@@ -43,12 +44,11 @@ var questionArray = [
 //give additional points for answering questions faster (possibly create hidden timer that starts per iteration of questions to award bonus points)
   //if statement (if answer before hiddenTimer == 0, +5%)
 //add button to access high scores from first page
-//store final score in local storage
-//hide elements that are not present (before start button is pressed)
-//aftrer quiz is complete, give prompt or possibly change page (for user to enter initials)
-//initials and score are stored in a list that pulls from local storage.
-//list must display top score to bottom score (litterally).
 
+//after quiz is complete, give prompt or possibly change page (for user to enter initials)
+
+//store final score in local storage (possibly store within an arrray, displaying only up to .length of 10)
+//list must display top score to bottom score (litterally)....possibly .sort
 //bonus: sound bloops
 
 
@@ -81,16 +81,34 @@ function setTime() {
 }
 
 
+//-------------------------------- Hidden Timer --------------------------------------
+//completing an answer before this timer runs out gives a bonus to the score.
+//timer initiates within every iteration of the questions.
+
+var bonusSeconds = 5; //starting seconds
+
+function setBonusTime() {
+  var bonusTimerInterval = setInterval(function() {
+    bonusSeconds--;
+    console.log(bonusSeconds)
+
+    if(secondsLeft === 0) {
+      clearInterval(bonusTimerInterval);
+    }
+
+  }, 1000);
+
+  //if statement: if answer given (eventlistener) happens before time = 0, double score.
+}
+
+
+
+
 // ------------------------------ Quiz Questions ------------------------------------
 
 var index = 0;
 var input;
 function displayQuestions() {
-
-    //not needed:
-    // var ques = questionArray[index]
-    // questionDisplay.innertext = ques.title;
-    
 
     questionDisplay.textContent = questionArray[index].title;
     option1.textContent = questionArray[index].options[0];
@@ -104,15 +122,40 @@ function displayQuestions() {
     option3.style.visibility = "visible";
     option4.style.visibility = "visible";
 
-//not done yet...
-    // if (questionArray[index].options[0] === questionArray[index].answer) {
-    //     score ++;
-    // }
-    // else {
-    //     secondsLeft = secondsLeft -15;
-    // }
-
+    if (index === questionArray.length - 1) {
+        displayScore();
+    }
     
+};
+
+optionsList.addEventListener("click", nextPage);
+
+
+
+function nextPage() {
+    console.log("Banana!");
+    displayQuestions();
+
+
+    if (questionArray[index].options[0] === questionArray[index].answer) {
+        score ++;
+    }
+    else {
+        secondsLeft = secondsLeft - 15;
+    }
+}
+
+function displayScore() {
+    option1.style.visibility = "hidden";
+    option2.style.visibility = "hidden";
+    option3.style.visibility = "hidden";
+    option4.style.visibility = "hidden";
+
+    prompt("Your final score is " + score + ".")
+    
+
+}    
+
 
 
     // function clickOption1(input){
@@ -139,13 +182,8 @@ function displayQuestions() {
     // else {
     //     secondsLeft = secondsLeft -15;
     // };
-};
 
 
-function nextPage() {
-    console.log("Banana!");
-    displayQuestions();
-}
 
 
 

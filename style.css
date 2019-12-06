@@ -97,6 +97,12 @@ body.correct {
     color: white;
     float: left;
 }
+
+#start-button:hover {
+    border-color: black;
+    border-width: 2px;
+}
+
 #high-scores {
     border: 1px solid hsl(var(--hue), 100%, 30%);
     background-color: hsl(var(--hue), 100%, 50%);
@@ -115,6 +121,10 @@ body.correct {
     color: white;
 }
 
+#high-scores:hover {
+    border-color: black;
+    border-width: 2px;
+}
 
 .timer {
     border: 1px solid hsl(var(--hue), 100%, 30%);
@@ -129,11 +139,6 @@ body.correct {
     font-style: bold;
     color: white;
     float: left;
-}
-
-#start-button:hover {
-    border-color: black;
-    border-width: 2px;
 }
 
 .quizControl {
