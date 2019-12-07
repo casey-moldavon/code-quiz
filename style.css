@@ -147,30 +147,3 @@ body.correct {
     align-items: center;
 }
 
-
-
-/* 
-body {
-    background-color: rgb(133, 128, 128);
-    margin: 0;
-    padding: 0;
-}
-
-.quiz_wrapper {
-    height: 400px;
-    width: 600px;
-    background-color: green;
-    margin: 30px auto;
-    border-radius: 10px;
-    padding: 25px;
-}
-
-.question-display {
-    padding: 10px;
-    background-color: red;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 20px;
-    float: left;  
-    width: 100%; 
-} */

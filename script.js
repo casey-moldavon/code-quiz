@@ -47,16 +47,8 @@ var questionArray = [
 
 
 //*****important notes*****
-//give additional points for answering questions faster (possibly create hidden timer that starts per iteration of questions to award bonus points)
-  //if statement (if answer before hiddenTimer == 0, +5%)
-//add button to access high scores from first page
 
-//after quiz is complete, give prompt or possibly change page (for user to enter initials)
-
-//store final score in local storage (possibly store within an arrray, displaying only up to .length of 10)
 //list must display top score to bottom score (litterally)....possibly .sort
-//bonus: sound bloops
-
 
 
 //-------------------------- function to start quiz ---------------------------------
