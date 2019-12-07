@@ -15,9 +15,6 @@ var timeEl = document.querySelector(".timer");
 var optionsList = document.querySelector(".options-list");
 
 
-var score = 0
-
-
 //------------------------------ Question Array ------------------------------------
 var questionArray = [
     {
@@ -35,8 +32,17 @@ var questionArray = [
         options: ["thing", "some", "something", "nothing"],
         answer: "something"
 
+    },
+    {
+        title: "How do cat's display respect?",
+        options: ["meowing", "hissing or growling", "bathing", "arching their tail"],
+        answer: "arching their tail"
+    },
+    {
+        title: "How do cats get comfortable?",
+        options: ["meowing", "hissing or growling", "bathing", "arching their tail"],
+        answer: "bathing"
     }
-    ///etc.
   ];
 
 
@@ -74,7 +80,7 @@ function setTime() {
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
-      alert("time is up");
+      alert("All done!");
     }
 
   }, 1000);
@@ -85,7 +91,7 @@ function setTime() {
 //completing an answer before this timer runs out gives a bonus to the score.
 //timer initiates within every iteration of the questions.
 
-var bonusSeconds = 5; //starting seconds
+var bonusSeconds = 7; //starting seconds
 
 function setBonusTime() {
   var bonusTimerInterval = setInterval(function() {
@@ -106,7 +112,9 @@ function setBonusTime() {
 
 // ------------------------------ Quiz Questions ------------------------------------
 
+var score = 0;
 var index = 0;
+var scoreArray = []
 var input;
 function displayQuestions() {
 
@@ -115,85 +123,112 @@ function displayQuestions() {
     option2.textContent = questionArray[index].options[1];
     option3.textContent = questionArray[index].options[2];
     option4.textContent = questionArray[index].options[3];
-    index ++;
 
     option1.style.visibility = "visible";
     option2.style.visibility = "visible";
     option3.style.visibility = "visible";
     option4.style.visibility = "visible";
 
-    if (index === questionArray.length - 1) {
-        displayScore();
-    }
-    
+    option1.value = questionArray[index].options[0];
+    option2.value = questionArray[index].options[1];
+    option3.value = questionArray[index].options[2];
+    option4.value = questionArray[index].options[3];
+
+    setBonusTime()
+
 };
 
-optionsList.addEventListener("click", nextPage);
+//---------------------------- Question Checker ---------------------------------
 
-
-
-function nextPage() {
-    console.log("Banana!");
-    displayQuestions();
-
-
-    if (questionArray[index].options[0] === questionArray[index].answer) {
-        score ++;
+//---------- button 1 ----------
+option1.addEventListener("click", function(){
+    console.log(option1.value);
+    if (option1.value === questionArray[index].answer) {
+        score = score + 10;
+        if (bonusSeconds > 0){ score += 10;}
     }
     else {
         secondsLeft = secondsLeft - 15;
     }
+    console.log(score);
+    
+    nextPage();
+})
+//---------- Button 2 ----------
+option2.addEventListener("click", function(){
+    if (option2.value === questionArray[index].answer) {
+        score = score + 15;
+        if (bonusSeconds > 0){ score += 10;}
+    }
+    else {
+        secondsLeft = secondsLeft - 15;
+    }
+    nextPage();
+})
+//---------- Button 3 ----------
+option3.addEventListener("click", function(){
+    if (option3.value === questionArray[index].answer) {
+        score = score + 15;
+        if (bonusSeconds > 0){ score += 10;}
+    }
+    
+    else {
+        secondsLeft = secondsLeft - 15;
+    }
+    nextPage();
+})
+//---------- Button 4 ----------
+option4.addEventListener("click", function(){
+    if (option4.value === questionArray[index].answer) {
+        score = score + 15;
+        if (bonusSeconds > 0){ score += 10;}
+    }
+    else {
+        secondsLeft = secondsLeft - 15;
+    }
+    nextPage();
+})
+
+
+//---------------------------- Next Page ---------------------------------
+
+function nextPage() {
+    index += 1;
+    console.log(index);
+    if (index === questionArray.length) {
+        displayScore();
+    }
+    else {
+        displayQuestions();
+    }
 }
 
+
+//-------------------------- Display Score -------------------------------
+
+
+var saveObject = {};
 function displayScore() {
+
+    secondsLeft = 1;
+
+
     option1.style.visibility = "hidden";
     option2.style.visibility = "hidden";
     option3.style.visibility = "hidden";
     option4.style.visibility = "hidden";
 
-    prompt("Your final score is " + score + ".")
-    
-
-}    
+    var initials = prompt("Your final score is " + score + "/100" + ". Please enter your initials.");
 
 
+    console.log(saveObject);
+    console.log(saveObject_serialized);
 
-    // function clickOption1(input){
-    //     input = option1
-    // };
-    // function clickOption2(input){
-    //     input = option2
-    // };
-    // function clickOption3(input){
-    //     input = option3
-    // };
-    // function clickOption4(input){
-    //     input = option4
-    // };
+    highScoreButton.style.visibility = "visible";
+    startButton.style.visibility = "visible";
+};
 
 
-//------------------------ next page -------------------------------------------
+highScoreButton.addEventListener("click", function() {
 
-    // nextPage();
-
-    // if (input === questionArray.answer) {
-    //     score++;
-    // };
-    // else {
-    //     secondsLeft = secondsLeft -15;
-    // };
-
-
-
-
-
-    // var input = //this variable represents the user's answer
-
-    // if (input === questions.answer) {
-    //     score ++;
-    //     secondsLeft = secondsLeft + 15;
-    // }
-    // else {
-    //     secondsLeft = secondsLeft - 15;
-    // }
-
+});
