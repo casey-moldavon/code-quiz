@@ -1,10 +1,10 @@
 # Project Title: Code Quiz
 ​
-This project has got to be, by far, the most challenging one i've encountered thus far. It required numerous rewrites, quite a bit of sanity and its very possible that i nearly broke google...or i'm due to recieve an award. Either are possible. The point of this activity was to create, from scratch, a quiz/questionare that was not only timed and fully interactive but also recorded the user's score to local storage.
+This project was, by far, the most challenging one i had encountered by this point in my learning process. It required numerous rewrites, quite a bit of sanity and its very possible that i nearly broke google...or i'm due to recieve an award for top googler... Either are possible. The point of this activity was to create, from scratch, a quiz/questionare that was not only timed and fully interactive but also recorded the user's score to local storage.
 ​
 ## Getting Started
 ​
-As with most projects, i began initially by creating the necessary document i would need which included an index.html, style.css and a scrip.js. I also created a question.js to store the related questions for the code quiz but later decided against using it.
+As with most projects, i began initially by creating the necessary documents i would need which included an index.html, style.css and a script.js. I also created a question.js to store the related questions for the code quiz but later decided against using it.
 
 I started working on the index.html file, laying down the bones for my creation. I found this part to be the easiest of the entire project and really only made slight alterations over time to IDs, classes and the buttons (though most changes were purely cosmetic such as changing the id names to get better organized).
 
